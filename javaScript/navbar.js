@@ -3,7 +3,7 @@
  */
 function goTo(pathname) {
     window.location.href = pathname;
- }
+}
 
 /**
  * It adds the class 'navbar-active' to the elements with the IDs 'el1' and 'el2'.
@@ -13,7 +13,7 @@ function goTo(pathname) {
 function addBgrToNav(el1, el2) {
     document.getElementById(el1).setAttribute('onclick', '');
     document.getElementById(el1).classList.add('navbar-active');
-    if(el2) {
+    if (el2) {
         document.getElementById(el2).setAttribute('onclick', '');
         document.getElementById(el2).classList.add('navbar-active');
     }
@@ -25,15 +25,15 @@ function addBgrToNav(el1, el2) {
  */
 function checkCurrentPage() {
     const pathname = window.location.pathname;
-    if(pathname == '/join/contacts.html') {
+    if (pathname == '/join/contacts.html') {
         addBgrToNav('hover-active4', 'hover-active8');
-    }else if(pathname == '/join/addTask.html') {
+    } else if (pathname == '/join/addTask.html') {
         addBgrToNav('hover-active3', 'hover-active7');
-    }else if(pathname == '/join/board.html') {
+    } else if (pathname == '/join/board.html') {
         addBgrToNav('hover-active2', 'hover-active6');
-    }else if(pathname == '/join/summary.html') {
+    } else if (pathname == '/join/summary.html') {
         addBgrToNav('hover-active1', 'hover-active5');
-    }else if(pathname == '/join/legal.html') {
+    } else if (pathname == '/join/legal.html') {
         addBgrToNav('hover-active9');
     }
 }
