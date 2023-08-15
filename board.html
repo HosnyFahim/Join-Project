@@ -29,7 +29,7 @@
     <script src="./javaScript/templates.js"></script>
 </head>
 
-<body  id="boardBg" onload="checkLoginStatus(), includeHTML(), loadTasks(), getTaskCatrgories()">
+<body id="boardBg" onload="checkLoginStatus(), includeHTML(), loadTasks(), getTaskCatrgories()">
     <header w3-include-html="templates/desktop_template.html"></header>
 
 
@@ -60,7 +60,8 @@
                 <div class="boardHeadRightSide">
                     <div style="display: contents;">
                         <div class="boardSearchParent">
-                            <input id="boardInput" placeholder="Search..." class="boardSearchBar" type="text" onkeyup="filterTasks()">
+                            <input id="boardInput" placeholder="Search..." class="boardSearchBar" type="text"
+                                onkeyup="filterTasks()">
                             <button onclick="filterTasks()" class="searchBtn"><img src="img/search.svg" alt=""></button>
                         </div>
 
@@ -70,7 +71,7 @@
                         </button>
 
 
-                        <button onclick="openTaskPopUp()" class="boardMobileAddTaskBtn">
+                        <button onclick=" getContacts(), openTaskPopUp(), setDate()" class="boardMobileAddTaskBtn">
                             <img src="img/addtaskmobile.svg" alt="">
                         </button>
 
@@ -91,40 +92,44 @@
                 <div class="centerLists">
                     <div class="titelStyle">
                         <h2>To do</h2>
-                        <img  onclick="openTaskPopUp(), setDate(),changeBoard('todo')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+                        <img onclick="getContacts(), openTaskPopUp(), setDate(),changeBoard('todo')"
+                            src="img/plusbuttonv1.svg" class="addTaskPlusImg">
                     </div>
-                    <div class="singleBoards" ondrop="moveTo('todo'), toggleDragAreas()"
-                        ondragover="allowDrop(event)" id="todo">
+                    <div class="singleBoards" ondrop="moveTo('todo'), toggleDragAreas()" ondragover="allowDrop(event)"
+                        id="todo">
                     </div>
                 </div>
                 <div class="centerLists">
                     <div class="titelStyle">
                         <h2>In Progress</h2>
-                        <img onclick="openTaskPopUp(), setDate(),changeBoard('inProgress')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+                        <img onclick="getContacts(), openTaskPopUp(), setDate(),changeBoard('inProgress')"
+                            src="img/plusbuttonv1.svg" class="addTaskPlusImg">
 
                     </div>
-                    <div class="singleBoards"
-                        ondrop="moveTo('inProgress'), toggleDragAreas()" ondragover="allowDrop(event)" id="inProgress">
+                    <div class="singleBoards" ondrop="moveTo('inProgress'), toggleDragAreas()"
+                        ondragover="allowDrop(event)" id="inProgress">
                     </div>
                 </div>
                 <div class="centerLists">
                     <div class="titelStyle">
                         <h2>Testing</h2>
-                        <img onclick="openTaskPopUp(), setDate(),changeBoard('testing')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+                        <img onclick="getContacts(), openTaskPopUp(), setDate(),changeBoard('testing')"
+                            src="img/plusbuttonv1.svg" class="addTaskPlusImg">
 
                     </div>
-                    <div class="singleBoards"
-                        ondrop="moveTo('testing'), toggleDragAreas()" ondragover="allowDrop(event)" id="testing">
+                    <div class="singleBoards" ondrop="moveTo('testing'), toggleDragAreas()"
+                        ondragover="allowDrop(event)" id="testing">
                     </div>
                 </div>
                 <div class="centerLists">
                     <div class="titelStyle">
                         <h2>Done</h2>
-                        <img onclick="openTaskPopUp(), setDate(),changeBoard('done')" src="img/plusbuttonv1.svg" class="addTaskPlusImg">
+                        <img onclick="getContacts(), openTaskPopUp(), setDate(),changeBoard('done')"
+                            src="img/plusbuttonv1.svg" class="addTaskPlusImg">
 
                     </div>
-                    <div class="singleBoards" ondrop="moveTo('done'), toggleDragAreas()"
-                        ondragover="allowDrop(event)" id="done">
+                    <div class="singleBoards" ondrop="moveTo('done'), toggleDragAreas()" ondragover="allowDrop(event)"
+                        id="done">
                     </div>
                 </div>
             </div>
@@ -135,12 +140,14 @@
         </div>
 
     </div>
-   
+
     <div id="moreInfoBg" onclick="closeEditTool()" class="moreInfoBg backgroundBlur d-none"></div>
     <dialog id="msgBoxAlert" class="msgBox d-none" style="background-color: tomato;"></dialog>
     <dialog id="msgBox" class="msgBox d-none" onclick=""></dialog>
-    <div onclick="resetFormTaskPopUp(), closeTaskPopUp()" class="popUpBackgroundContainer d-none" id="task-bgr-popUp"> </div>
-    <div class="addTaskPopUp d-none animationFadeInRight" id="task-popUp" w3-include-html="templates/addTask_template.html"></div>
+    <div onclick="resetFormTaskPopUp(), closeTaskPopUp()" class="popUpBackgroundContainer d-none" id="task-bgr-popUp">
+    </div>
+    <div class="addTaskPopUp d-none animationFadeInRight" id="task-popUp"
+        w3-include-html="templates/addTask_template.html"></div>
 </body>
 
 </html>

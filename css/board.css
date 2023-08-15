@@ -29,6 +29,7 @@ h1 {
 .boardMobileAddTaskBtn {
   display: none;
 }
+
 .parentContainer {
   margin-left: 252px !important;
 }
@@ -104,6 +105,7 @@ h1 {
   width: 50px;
   height: 50px;
 }
+
 .BoardBtn {
   height: 35px;
   width: 35px;
@@ -201,11 +203,10 @@ h1 {
 
 .categoryTag {
   margin-bottom: 15px;
-  height: 25px;
+  min-height: 25px;
   border-radius: 10px;
   text-align: center;
   color: white;
-  width: fit-content;
   padding: 0px 25px;
   width: fit-content;
   display: flex;
@@ -219,18 +220,20 @@ h1 {
   padding: 0px 5px 0 5px;
   column-gap: 25px;
 }
+
 .categoryContainer {
   display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .nextBoard {
   transform: rotate(180deg);
-    filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(2061%) hue-rotate(87deg) brightness(103%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(2061%) hue-rotate(87deg) brightness(103%) contrast(98%);
 }
+
 .prevBoard {
   padding-bottom: 4px;
-    filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(2061%) hue-rotate(87deg) brightness(103%) contrast(98%);
+  filter: brightness(0) saturate(100%) invert(0%) sepia(1%) saturate(2061%) hue-rotate(87deg) brightness(103%) contrast(98%);
 }
 
 .titelStyle {
@@ -263,7 +266,7 @@ h1 {
   overflow-x: scroll;
   width: 250px;
   height: 100%;
-  
+
   flex-direction: column;
   border-radius: 25px;
   row-gap: 35px;

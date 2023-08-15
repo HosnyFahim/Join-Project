@@ -38,7 +38,7 @@ async function saveTasks() {
 async function loadTasks() {
     await downloadFromServer();
     boardTasks = JSON.parse(backend.getItem('tasks')) || [];
-    distributeIDs()
+    distributeIDs();
     filterdTasks = boardTasks;
     renderTodos(boardTasks);
 }
@@ -70,9 +70,9 @@ function filterTasks() {
 }
 
 function includesSearch(t, search) {
-    return  t.title.toLowerCase().startsWith(search) || 
-            t.description.toLowerCase().startsWith(search) ||
-            t.category.toLowerCase().startsWith(search)
+    return t.title.toLowerCase().startsWith(search) ||
+        t.description.toLowerCase().startsWith(search) ||
+        t.category.toLowerCase().startsWith(search)
 }
 
 /**
@@ -211,7 +211,7 @@ function renderAssignedUser(boardIndex, locationIndex) {
  */
 function subtaskCheckedBoard(i, y) {
     boardTasks[i].subtasks[y].status = !boardTasks[i].subtasks[y].status;
-    }
+}
 
 /**
  * If the number of checked subtasks is 100 or the number of subtasks is 0, then the task is finished.
@@ -238,5 +238,5 @@ function allowPush(i) {
             boardTasks[i].board = "testing";
             initMsgBoxAlert('Subtasks not finished!');
         }
-    }  
+    }
 }

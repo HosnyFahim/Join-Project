@@ -62,31 +62,18 @@ function DateValidation() {
 function CheckPage() {
     if (window.location.pathname == '/join/addTask.html') {
         setTimeout(() => {
-            goTo('board.html')
+            goTo('board.html');
         }, 1000);
     }
     if (window.location.pathname == '/join/board.html') {
         boardTasks = tasks;
-        distributeIDs()
+        distributeIDs();
         filterdTasks = boardTasks;
         closeTaskPopUp();
         renderTodos(boardTasks);
     }
 }
 
-/**
- * It closes the task pop up window and resets the form.
- */
-function closeTaskPopUp() {
-    let board = window.location.pathname == '/join/board.html';
-    document.getElementById('task-popUp').classList.add('d-none');
-    document.getElementById('task-bgr-popUp').classList.add('d-none');
-    if (board) {
-        document.getElementById('boardBg').classList.remove('noScroll');
-    }
-    cancelTask();
-    document.getElementById('add-new-task').reset();
-}
 
 /**
  * If the task object doesn't have a category, priority, or due date, then the corresponding input

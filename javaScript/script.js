@@ -1,4 +1,4 @@
-setURL('https://hosny-fahim.developerakademie.net/smallest_backend_ever');
+setURL('https://hosny-fahim.com/smallest_backend_ever');
 
 
 let guest = [];

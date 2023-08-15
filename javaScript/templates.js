@@ -180,7 +180,7 @@ function generateEditBoardTask(i) {
                         <div>
                             <div class="container">
                                 <h3>Due date</h3>
-                                <input value="${boardTasks[i]['dueDate']}" class="input-addTask" type="date" id="EditDate">
+                                <input value="${boardTasks[i]['dueDate']}" onclick="addDate()" class="input-addTask" type="date" id="EditDate">
                             </div>
                             <div class="prio">
                                 <h3>Prio</h3>
@@ -255,7 +255,7 @@ function generateAssignedContactsHTML(i) {
 
 
 
-function categoryListItemHTML(name  ,color) {
+function categoryListItemHTML(name, color) {
     return `
         <p id="categoryName" class="textBox">${name}</p>
         <div id="categoryColor" style="background-color: ${color}" class="selectCategoryColor left"></div>
@@ -293,7 +293,7 @@ function genarateContactAssignedTo(i) {
 }
 
 function generateNotCheckedSubtask(i) {
-   return `
+    return `
             <div class="subtask-element">
                 <div class="justify-content-center">
                   <input onclick="subtaskChecked(${i})" id="checkbox-subtask${i}" class="p-absolute" type="checkbox"></input>
@@ -335,7 +335,7 @@ function generateSubtaskBoard(i, y, subtask) {
 }
 
 function generateAssignedUserInfoBoard(i, y) {
-        return /*html*/`
+    return /*html*/`
             <div class="assignedUserInfoParent">
                 <div class="assignedUserImg" style="background-color: ${boardTasks[i].assignedTo[y].color}" data-tooltip="${boardTasks[i].assignedTo[y].email}" data-flow="right">
                   ${getInitials(boardTasks[i].assignedTo[y].name)}
@@ -356,14 +356,14 @@ function generateSubtaskInfoBoard(i, y, checkedAttribute) {
 }
 
 function generateDisplayedCardUsers(y, assignedUsers) {
-        return    /*html*/`
+    return    /*html*/`
             <div class="assignedUser" style="background-color: ${assignedUsers[y].color}">
                 ${getInitials(assignedUsers[y].name)}
             </div>`
 }
 
 function generateNotDisplayedCardUsers(assignedUsersLength, maxUsersToDisplay) {
-        return /*html*/`
+    return /*html*/`
             <div class="assignedUser">
                 +${assignedUsersLength - maxUsersToDisplay}
             </div>`
@@ -377,7 +377,7 @@ function returnContactLetterSeperator(i) {
         </div>`
 }
 
-function returnContactElement(i,j) {
+function returnContactElement(i, j) {
     return /*html*/ `
         <button class="listContact" onclick="mobileSwitchToDetail(), renderContactDetails(${i},${j})">
             <div id="single-contact-init${orderedContacts[i][j].id}" class="listContactInitials">${orderedContacts[i][j].initials}</div>

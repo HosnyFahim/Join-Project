@@ -39,6 +39,10 @@ input {
     overflow: hidden;
 }
 
+.scroll {
+    overflow: scroll !important;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
