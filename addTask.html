@@ -30,17 +30,19 @@
                 <div class="columnLeft">
                     <div class="container">
                         <h3>Title</h3>
-                        <input class="input-addTask" required placeholder="Add Title" id="title" onchange="addTitle()">
+                        <input class="input-addTask" required placeholder="Add Title" id="title" onchange="addTitle()"
+                            pattern="^[^<>&]*$">
                     </div>
                     <div class="container">
                         <h3>Description</h3>
                         <textarea required placeholder="Enter a description" id="description" method="dialog"
-                            onchange="addDescription()"></textarea>
+                            onchange="addDescription()" pattern="^[^<>&]*$"></textarea>
                     </div>
                     <div class="container">
                         <h3>Category</h3>
                         <div id="newCategory" class="new-category d-none">
-                            <input id="categoryInput" class="input-addTask" placeholder="New category name" type="text" maxlength="20">
+                            <input id="categoryInput" class="input-addTask" placeholder="New category name" type="text"
+                                maxlength="20" pattern="^[^<>&]*$">
                             <img class="clear-img" onclick="clearNewCategory()" src="img/clear.svg">
                             <div class="line"></div>
                             <img id="saveNewCategory" class="right-img" onclick="" src="img/addTask-right.svg">
@@ -95,7 +97,7 @@
                 <div class="columnRight">
                     <div class="container">
                         <h3>Due date</h3>
-                        <input onclick="addDate()"  class="input-addTask" type="date" id="date">
+                        <input onclick="addDate()" class="input-addTask" type="date" id="date" pattern="^[^<>&]*$">
                     </div>
                     <div class="prio">
                         <h3>Prio</h3>
@@ -118,7 +120,8 @@
 
                         <h3>Subtasks</h3>
                         <div class="subtasks">
-                            <input id="inputSubtask" class="input-addTask" placeholder="Add new subtask" type="">
+                            <input id="inputSubtask" class="input-addTask" placeholder="Add new subtask" type=""
+                                pattern="^[^<>&]*$">
                             <img onclick="addSubtask()" src="img/plus.svg">
                         </div>
                     </div>
@@ -127,7 +130,8 @@
                     <div class="create-task-buttons">
                         <button type="reset" onclick="cancelTask()" class="clear-btn">Clear <img src="img/clear.svg">
                         </button>
-                        <button type="submit" class="create-task-btn" id="creatTaskBtn">Create Task <img src="img/addTask-right.svg">
+                        <button type="submit" class="create-task-btn" id="creatTaskBtn">Create Task <img
+                                src="img/addTask-right.svg">
                         </button>
                     </div>
                 </div>

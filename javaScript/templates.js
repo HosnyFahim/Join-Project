@@ -130,7 +130,7 @@ function generateEditBoardTask(i) {
                     <div class="columnLeft">
                         <div class="container">
                             <h3>Title</h3>
-                            <input class="input-addTask" required placeholder="Add Title" id="titleEditBoard" value="${boardTasks[i]['title']}">
+                            <input class="input-addTask" required placeholder="Add Title" id="titleEditBoard" value="${boardTasks[i]['title']}" pattern="^[^<>&]*$">
                         </div>
                         <div class="container">
                             <h3>Description</h3>
@@ -139,7 +139,7 @@ function generateEditBoardTask(i) {
                         <div class="container">
                             <h3>Category</h3>
                             <div id="newCategoryBoard" class="new-category d-none">
-                                <input id="categoryInputBoard" class="input-addTask" placeholder="New category name" type=""><img
+                                <input id="categoryInputBoard" class="input-addTask" placeholder="New category name" type="" pattern="^[^<>&]*$"><img
                                     class="clear-img" onclick="clearNewCategoryBoard()" src="img/clear.svg">
                                 <div class="line"></div>
                                 <img id="saveNewCategoryBoard" class="right-img" onclick="createCategoryBoard()" src="img/addTask-right.svg">
@@ -180,7 +180,7 @@ function generateEditBoardTask(i) {
                         <div>
                             <div class="container">
                                 <h3>Due date</h3>
-                                <input value="${boardTasks[i]['dueDate']}" onclick="addDate()" class="input-addTask" type="date" id="EditDate">
+                                <input value="${boardTasks[i]['dueDate']}" onclick="addDate()" class="input-addTask" type="date" id="EditDate" pattern="^[^<>&]*$">
                             </div>
                             <div class="prio">
                                 <h3>Prio</h3>
@@ -203,7 +203,7 @@ function generateEditBoardTask(i) {
     
                                 <h3>Subtasks</h3>
                                 <div class="subtasks">
-                                    <input id="inputSubtaskBoard" class="input-addTask" placeholder="Add new subtask" type=""><img
+                                    <input id="inputSubtaskBoard" pattern="^[^<>&]*$" class="input-addTask" placeholder="Add new subtask" type=""><img
                                     onclick="addSubtaskBoard(${i})" src="img/plus.svg">
                                 </div>
                                 <div class="subTaskContainerBoard" id="subTaskContainerEdit"> </div>
@@ -439,7 +439,7 @@ function generateChangeOverlayToEditContact(firstIndex, secondIndex) {
                 <input id="input-email" placeholder="Email" type="email" maxlength="40" class="overlayInput" value="${orderedContacts[firstIndex][secondIndex].email}" required><img src="img/Email.svg">
             </div>
             <div class="overlayInputSection">
-                <input id="input-phone" placeholder="Phone" type="tel" pattern="[0-9+/ ]*" minlength="6" maxlength="30" class="overlayInput" value="${orderedContacts[firstIndex][secondIndex].phone}" required><img src="img/phone.svg">
+                <input id="input-phone" placeholder="Phone" type="tel" pattern="[0-9]+" minlength="6" maxlength="30" class="overlayInput" value="${orderedContacts[firstIndex][secondIndex].phone}" required><img src="img/phone.svg">
             </div>
             <button id="overlay-save-btn" type="submit" class="overlayActionBtn">Save</button>
             </form>
